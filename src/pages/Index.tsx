@@ -1,13 +1,45 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Helmet } from "react-helmet-async";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import HeroSection from "@/components/home/HeroSection";
+import CategoriesSection from "@/components/home/CategoriesSection";
+import PopularProducts from "@/components/home/PopularProducts";
+import AdvantagesSection from "@/components/home/AdvantagesSection";
+import BrandsSection from "@/components/home/BrandsSection";
+import PromoSection from "@/components/home/PromoSection";
+import ReviewsSection from "@/components/home/ReviewsSection";
+import CTASection from "@/components/home/CTASection";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <>
+      <Helmet>
+        <title>AutoParts.kz — Автозапчасти в Казахстане | Оригиналы и аналоги</title>
+        <meta 
+          name="description" 
+          content="Интернет-магазин автозапчастей №1 в Казахстане. Более 500 000 запчастей в наличии. Подбор по VIN, быстрая доставка по Алматы, Астане и всему Казахстану." 
+        />
+        <meta name="keywords" content="автозапчасти, запчасти для авто, купить запчасти, Казахстан, Алматы, оригинальные запчасти" />
+        <link rel="canonical" href="https://autoparts.kz" />
+      </Helmet>
+
+      <div className="min-h-screen flex flex-col">
+        <Header />
+        
+        <main className="flex-1">
+          <HeroSection />
+          <CategoriesSection />
+          <PopularProducts />
+          <PromoSection />
+          <AdvantagesSection />
+          <BrandsSection />
+          <ReviewsSection />
+          <CTASection />
+        </main>
+
+        <Footer />
       </div>
-    </div>
+    </>
   );
 };
 
